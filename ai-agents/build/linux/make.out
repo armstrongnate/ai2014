@@ -1,0 +1,102 @@
+(x=`pwd`; x=`dirname $x`; x=`dirname $x`; \
+	 sed 's?^PREFIX_DIR *:=.*$?PREFIX_DIR := '$x'?' Makefile.top > Makefile.top.tmp; \
+	 mv Makefile.top.tmp Makefile.top)
+(x=`pwd`; x=`dirname $x`; x=`dirname $x`; x=`dirname $x`; \
+	 sed 's?^AI_PREFIX_DIR *:=.*$?AI_PREFIX_DIR := '$x'/ai?' Makefile.top > Makefile.top.tmp; \
+	 mv Makefile.top.tmp Makefile.top)
+(cd prog; make install)
+make[1]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog'
+for d in utils ScavengerWorld WumpusWorld PLTest FOLTest Rectangle Candy CCheckers TicTacToe Mancala; do \
+		(cd $d; make -j install) \
+	done
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/utils'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/utils'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+for d in SA_Test Genesis; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/SA_Test 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/SA_Test.o 00obj/Snorlax.o 00obj/Manual.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Nothing to be done for `install'.
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/ScavengerWorld'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/WumpusWorld'
+for d in WumpusAgent; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/WumpusWorld'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/WumpusAgent 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/WumpusAgent.o 00obj/Simpleton.o 00obj/Aristotle.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/WumpusWorld'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/WumpusWorld'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+for d in PL_Test PL_Shell PL_Dragons PL_Dragons_2012; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/PL_Test 00obj/PL_Test.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/PL_Shell 00obj/PL_Shell.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/PL_Dragons 00obj/PL_Dragons.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/PL_Dragons_2012 00obj/PL_Dragons_2012.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/PLTest'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/FOLTest'
+for d in FOL_Test; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/FOLTest'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/FOL_Test 00obj/FOL_Test.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/FOLTest'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/FOLTest'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+for d in Rectangle RectangleSolver; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/Rectangle 00obj/RectDriver.o 00obj/RectProblem.o 00obj/RectState.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/RectangleSolver 00obj/RectangleSolver.o 00obj/RectProblem.o 00obj/RectState.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Rectangle'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Candy'
+for d in CandyAgent; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Candy'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/CandyAgent 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/CandyAgent.o 00obj/Augustus.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Candy'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Candy'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/CCheckers'
+for d in CA_Test; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/CCheckers'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/CA_Test 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/CA_Test.o 00obj/RandomPick.o 00obj/Dumbo1.o 00obj/Dumbo2.o 00obj/Smarty.o 00obj/Pikachu.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/CCheckers'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/CCheckers'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/TicTacToe'
+for d in TicTacToeAgent; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/TicTacToe'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/TicTacToeAgent 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/TicTacToeAgent.o 00obj/aiSampleManual.o 00obj/aiSampleRandom.o 00obj/aiSampleMaximum.o 00obj/aiSampleMinimax.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/TicTacToe'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/TicTacToe'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Mancala'
+for d in MancalaAgent; do \
+		make -f Makefile.$d install ; \
+	done
+make[3]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Mancala'
+g++ -I/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/include -Wall -DUSE_GLUT  -o /home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/bin/MancalaAgent 00obj/AgentProgramSelect.o 00obj/BoostExport.o 00obj/MancalaAgent.o 00obj/aiSampleManual.o 00obj/aiSampleRandom.o 00obj/aiSampleMaximum.o 00obj/aiSampleMinimax.o 00obj/aiSampleMinimaxRandom.o 00obj/aiSampleMinimaxEvaluation.o 00obj/aiSampleAlphaBeta.o 00obj/aiSampleAlphaBetaRandom.o 00obj/aiSampleAlphaBetaRandomEvaluation.o -L/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai/lib -laienvironment -laiagent -laisearch -laipl -laifol -lfreeglut -lpthread -lboost_serialization-mt
+make[3]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Mancala'
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog/Mancala'
+make[1]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-agents/build/linux/prog'

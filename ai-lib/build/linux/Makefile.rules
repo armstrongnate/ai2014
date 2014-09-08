@@ -1,0 +1,51 @@
+all: \
+	$(TARGET_HEADERS) \
+	$(OBJ_BASE) $(AI_LIB_DIR) $(AI_BIN_DIR) \
+	$(TARGET_LIB) \
+	$(TARGET_PROG)
+
+install: all 
+
+ifneq ($(strip $(TARGET_OBJS)),)
+
+$(TARGET_LIB): $(TARGET_OBJS)
+	ar crs $@ $?
+
+$(TARGET_PROG): $(TARGET_OBJS) $(LIB_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $(TARGET_OBJS) $(LDFLAGS)
+
+endif
+
+ifneq ($(strip $(TARGET_HEADERS)),)
+
+$(TARGET_HEADERS): $(AI_INC_DIR)/%.h : $(INC_DIR)/%.h
+	@mkdir -p `dirname $@`
+	cp $< $@
+
+endif
+
+
+objs: $(OBJ_BASE) $(TARGET_OBJS)
+libs: $(AI_LIB_DIR) $(TARGET_LIB)
+bins: $(AI_BIN_DIR) $(TARGET_PROG)
+
+$(OBJ_BASE) $(AI_LIB_DIR) $(AI_BIN_DIR):
+	mkdir $@
+
+clean:
+	-rm -f $(TARGET_OBJS) *~ $(LOCAL_INC_DIR)/*~ $(INC_DIR)/*~
+
+spotless: clean
+	-rm -f .depend* 
+	-rm -f $(TARGET_LIB)
+	-rm -f $(TARGET_PROG)
+	-rm -f $(TARGET_HEADERS)
+	-rm -rf $(OBJ_BASE)
+
+ifneq ($(strip $(LOCAL_AGENT_SELECT)),)
+Makefile.agents $(LOCAL_SRC_DIR)/$(LOCAL_AGENT_SELECT): $(UTIL_DIR)/AddAgentPrograms.pl $(LOCAL_SRC_DIR)/AgentPrograms.pm
+	$(UTIL_DIR)/AddAgentPrograms.pl -A $(LOCAL_SRC_DIR)/AgentPrograms.pm -S $(LOCAL_SRC_DIR)/$(LOCAL_AGENT_SELECT) -M Makefile.agents
+endif
+# Local Variables:
+# mode:makefile
+# End:

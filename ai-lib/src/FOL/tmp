@@ -1,0 +1,3 @@
+forall x/v 
+  !((forall y/v !(Animal/p/1(y/v)) | (Loves/p/2(x/v, y/v)))) |
+  ((exists y/v Loves/p/2(y/v, x/v)))

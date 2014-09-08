@@ -1,0 +1,25 @@
+#
+# deals with depends.
+#
+DEPFLAGS     := -M
+DEPENDFILE   := .depend
+ifneq ($(strip $(DIR_POSTFIX)),)
+DEPENDFILE   := $(DEPENDFILE)-$(DIR_POSTFIX)
+endif
+CXX_SRC_DEPS := ${CXX_SRC:%.cpp=$(DEPENDFILE).%.d}
+
+$(CXX_SRC_DEPS) : $(DEPENDFILE).%.d: $(LOCAL_SRC_DIR)/%.cpp $(BUILD_DIR)/Makefile.dep
+	@echo "building $@"
+	@$(SHELL) -ec '$(CXX) $(DEPFLAGS) $(DEPCXXFLAGS) $< | sed '\''s?^\($*\)\.o:?$(OBJ_BASE)/\1.o $(DEPENDFILE).\1.d : ?g'\'' > $@'
+	@echo '$(OBJ_BASE)/$*.o:' >> $@
+	@echo '	$$(CXX) $$(CXXFLAGS) -c $$(LOCAL_SRC_DIR)/$*.cpp -o $$@' >> $@
+
+
+#	$(SHELL) -ec '$(CXX) $(DEPFLAGS) $(CXXFLAGS) $< | egrep -v '\'':[         ]*/'\'' | sed '\''s?^\($*\)\.o:?\1.o $(DEPENDFILE).\1.d : ?g'\'' > $@'
+
+ifneq ($(strip $(CXX_SRC)),)
+include $(CXX_SRC_DEPS)
+endif
+# Local Variables:
+# mode:makefile
+# End:

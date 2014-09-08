@@ -1,0 +1,34 @@
+(x=`pwd`; x=`dirname $x`; x=`dirname $x`; \
+	 sed 's?^PREFIX_DIR *:=.*$?PREFIX_DIR := '$x'?' Makefile.top > Makefile.top.tmp; \
+	 mv Makefile.top.tmp Makefile.top)
+(x=`pwd`; x=`dirname $x`; x=`dirname $x`; x=`dirname $x`; \
+	 sed 's?^AI_PREFIX_DIR *:=.*$?AI_PREFIX_DIR := '$x'/ai?' Makefile.top > Makefile.top.tmp; \
+	 mv Makefile.top.tmp Makefile.top)
+(cd third; make install)
+make[1]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/third'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/third'
+(cd src; make install)
+make[1]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src'
+for d in Agent Search LocalSearch PL FOL CSP; do \
+		(cd $d; make -j install) \
+	done
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/Agent'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/Agent'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/Search'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/Search'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/LocalSearch'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/LocalSearch'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/PL'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/PL'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/FOL'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/FOL'
+make[2]: Entering directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/CSP'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src/CSP'
+make[1]: Leaving directory `/net/144.38.192.86/data/home/c/cgl2011/courses/git/cs4300/code/ai-2.0/ai-lib/build/linux/src'
