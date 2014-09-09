@@ -1,8 +1,9 @@
-00obj-o/AgentProgramSelect.o .depend-o.AgentProgramSelect.d :  \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/AgentProgramSelect.cpp \
+00obj-o/naaWyWy.o .depend-o.naaWyWy.d :  \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.cpp \
  /usr/include/stdc-predef.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_agent.h \
- /usr/include/c++/4.8/iostream \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_scavenger.h \
+ /usr/include/c++/4.8/string \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -10,23 +11,12 @@
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
- /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/memoryfwd.h \
- /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
- /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
- /usr/include/c++/4.8/exception \
- /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8/bits/exception_ptr.h \
- /usr/include/c++/4.8/bits/exception_defines.h \
- /usr/include/c++/4.8/bits/nested_exception.h \
  /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/stl_algobase.h \
  /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
  /usr/include/c++/4.8/bits/cpp_type_traits.h \
  /usr/include/c++/4.8/ext/type_traits.h \
  /usr/include/c++/4.8/ext/numeric_traits.h \
@@ -36,18 +26,38 @@
  /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
  /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.8/debug/debug.h \
- /usr/include/c++/4.8/bits/stl_iterator.h /usr/include/c++/4.8/cstdint \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
+ /usr/include/c++/4.8/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/exception_ptr.h \
+ /usr/include/c++/4.8/bits/nested_exception.h \
  /usr/include/c++/4.8/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
  /usr/include/c++/4.8/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
@@ -58,16 +68,6 @@
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
- /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
- /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
- /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
- /usr/include/c++/4.8/bits/ostream_insert.h \
- /usr/include/c++/4.8/bits/cxxabi_forced.h \
- /usr/include/c++/4.8/bits/stl_function.h \
- /usr/include/c++/4.8/backward/binders.h \
- /usr/include/c++/4.8/bits/range_access.h \
- /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/initializer_list \
  /usr/include/c++/4.8/ext/string_conversions.h \
  /usr/include/c++/4.8/cstdlib /usr/include/stdlib.h \
@@ -92,7 +92,36 @@
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.8/bits/functional_hash.h \
  /usr/include/c++/4.8/bits/hash_bytes.h \
- /usr/include/c++/4.8/bits/basic_string.tcc \
+ /usr/include/c++/4.8/bits/basic_string.tcc /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/alloc_traits.h \
+ /usr/include/c++/4.8/bits/ptr_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/vector.tcc /usr/include/c++/4.8/map \
+ /usr/include/c++/4.8/bits/stl_tree.h /usr/include/c++/4.8/bits/stl_map.h \
+ /usr/include/c++/4.8/tuple /usr/include/c++/4.8/utility \
+ /usr/include/c++/4.8/bits/stl_relops.h /usr/include/c++/4.8/array \
+ /usr/include/c++/4.8/stdexcept \
+ /usr/include/c++/4.8/bits/uses_allocator.h \
+ /usr/include/c++/4.8/bits/stl_multimap.h /usr/include/c++/4.8/thread \
+ /usr/include/c++/4.8/chrono /usr/include/c++/4.8/ratio \
+ /usr/include/c++/4.8/limits /usr/include/c++/4.8/ctime \
+ /usr/include/c++/4.8/functional /usr/include/c++/4.8/typeinfo \
+ /usr/include/c++/4.8/memory /usr/include/c++/4.8/bits/stl_tempbuf.h \
+ /usr/include/c++/4.8/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/4.8/ext/concurrence.h \
+ /usr/include/c++/4.8/bits/unique_ptr.h \
+ /usr/include/c++/4.8/bits/shared_ptr.h \
+ /usr/include/c++/4.8/bits/shared_ptr_base.h \
+ /usr/include/c++/4.8/backward/auto_ptr.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_xy.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_agent.h \
+ /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/bits/locale_classes.h \
  /usr/include/c++/4.8/bits/locale_classes.tcc \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
@@ -107,20 +136,6 @@
  /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/sstream \
  /usr/include/c++/4.8/bits/sstream.tcc /usr/include/c++/4.8/cstring \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
- /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
- /usr/include/c++/4.8/bits/alloc_traits.h \
- /usr/include/c++/4.8/bits/ptr_traits.h \
- /usr/include/c++/4.8/bits/stl_map.h /usr/include/c++/4.8/tuple \
- /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
- /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
- /usr/include/c++/4.8/bits/uses_allocator.h \
- /usr/include/c++/4.8/bits/stl_multimap.h /usr/include/c++/4.8/vector \
- /usr/include/c++/4.8/bits/stl_construct.h \
- /usr/include/c++/4.8/ext/alloc_traits.h \
- /usr/include/c++/4.8/bits/stl_uninitialized.h \
- /usr/include/c++/4.8/bits/stl_vector.h \
- /usr/include/c++/4.8/bits/stl_bvector.h \
- /usr/include/c++/4.8/bits/vector.tcc \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_boost.h \
  /usr/include/boost/archive/text_iarchive.hpp \
  /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
@@ -146,24 +161,16 @@
  /usr/include/boost/assert.hpp /usr/include/assert.h \
  /usr/include/boost/current_function.hpp /usr/include/c++/4.8/locale \
  /usr/include/c++/4.8/bits/locale_facets_nonio.h \
- /usr/include/c++/4.8/ctime \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/4.8/bits/codecvt.h \
  /usr/include/c++/4.8/bits/locale_facets_nonio.tcc \
  /usr/include/boost/detail/workaround.hpp /usr/include/boost/limits.hpp \
- /usr/include/c++/4.8/limits /usr/include/boost/io/ios_state.hpp \
- /usr/include/boost/io_fwd.hpp /usr/include/boost/scoped_ptr.hpp \
+ /usr/include/boost/io/ios_state.hpp /usr/include/boost/io_fwd.hpp \
+ /usr/include/boost/scoped_ptr.hpp \
  /usr/include/boost/smart_ptr/scoped_ptr.hpp \
  /usr/include/boost/checked_delete.hpp \
  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
- /usr/include/c++/4.8/memory /usr/include/c++/4.8/bits/stl_tempbuf.h \
- /usr/include/c++/4.8/bits/stl_raw_storage_iter.h \
- /usr/include/c++/4.8/typeinfo /usr/include/c++/4.8/ext/concurrence.h \
- /usr/include/c++/4.8/functional /usr/include/c++/4.8/bits/unique_ptr.h \
- /usr/include/c++/4.8/bits/shared_ptr.h \
- /usr/include/c++/4.8/bits/shared_ptr_base.h \
- /usr/include/c++/4.8/backward/auto_ptr.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/static_assert.hpp \
  /usr/include/boost/serialization/throw_exception.hpp \
@@ -555,11 +562,6 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDisplay.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/AgentDriver.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDriver.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/Snorlax.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_scavenger.h \
- /usr/include/c++/4.8/thread /usr/include/c++/4.8/chrono \
- /usr/include/c++/4.8/ratio \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_xy.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYAction.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYLocation.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYObject.h \
@@ -587,8 +589,6 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/Scavenger/ScavengerEnvironmentDisplay3D.h \
  /usr/include/c++/4.8/mutex /usr/include/c++/4.8/system_error \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/error_constants.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/Manual.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h
-00obj-o/AgentProgramSelect.o:
-	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h
+00obj-o/naaWyWy.o:
+	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaWyWy.cpp -o $@

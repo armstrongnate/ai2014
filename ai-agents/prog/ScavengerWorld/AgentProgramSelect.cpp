@@ -3,6 +3,7 @@
 
 #include "Snorlax.h"
 #include "Manual.h"
+#include "naaWyWy.h"
 
 namespace ai
 {
@@ -19,11 +20,15 @@ namespace ai
         case 'm':
           agent_program = new ai::Sample::Manual();
           break;
+        case 'w':
+          agent_program = new naa::WyWy(opts);
+          break;
 
         default:
           std::cout << "Unknown agent program " << std::endl
                     << "s : Snorlax" << std::endl
                     << "m : Manual" << std::endl
+                    << "w : WyWy" << std::endl
       
 		    << std::endl;
           exit(1);

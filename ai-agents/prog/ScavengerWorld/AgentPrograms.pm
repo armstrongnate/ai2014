@@ -17,6 +17,13 @@ our $aps =
    cpp    => ['Manual.cpp'],
    constructor => 'ai::Sample::Manual()',
  },
+ {
+   name => 'WyWy',
+   key  => 'w',
+   header => 'naaWyWy.h',
+   cpp    => ['naaWyWy.cpp'],
+   constructor => 'naa::WyWy(opts)',
+ },
 #{
 #  name => '',
 #  key  => '',
