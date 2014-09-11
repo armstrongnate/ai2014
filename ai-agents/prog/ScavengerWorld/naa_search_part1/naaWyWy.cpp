@@ -75,7 +75,6 @@ namespace naa
           std::cout << a.GetName() << ": " << a.GetValue() << std::endl;
         }
     }
-
     if (!northBlocked) {
       action->SetCode(ai::Scavenger::Action::GO_NORTH);
     } else {
