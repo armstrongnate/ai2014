@@ -25,6 +25,13 @@ namespace naa
 
   ai::Agent::Action * WyWy::Program(const ai::Agent::Percept * percept)
   {
+    bool northBlocked = false;
+    double myX, myY, myZ;
+
+    myX = atof(percept->GetAtom("X_LOC").GetValue().c_str());
+    myY = atof(percept->GetAtom("Y_LOC").GetValue().c_str());
+    myZ = atof(percept->GetAtom("Z_LOC").GetValue().c_str());
+
     ai::Scavenger::Action *action = new ai::Scavenger::Action;
     unsigned int i;
 
@@ -58,6 +65,10 @@ namespace naa
               << west << " "
               << std::endl;
           delete [] values;
+
+          if (fabs(x - myX) < .500 && fabs(y - myY) < .500 && (std::strcmp(north, "wall") == 0 || std::strcmp(north, "cliff") == 0)) {
+            northBlocked = true;
+          }
         }
       else
         {
@@ -65,6 +76,12 @@ namespace naa
         }
     }
 
+    if (!northBlocked) {
+      action->SetCode(ai::Scavenger::Action::GO_NORTH);
+    } else {
+      action->SetCode(ai::Scavenger::Action::QUIT);
+    }
+    return action;
 #if 0
 
     double x, y, z;
