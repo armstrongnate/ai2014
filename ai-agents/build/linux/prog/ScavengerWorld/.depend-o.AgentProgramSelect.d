@@ -589,6 +589,7 @@
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/error_constants.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/Manual.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaModel.h
 00obj-o/AgentProgramSelect.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@

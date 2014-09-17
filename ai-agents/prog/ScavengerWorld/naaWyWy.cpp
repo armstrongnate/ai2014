@@ -17,6 +17,7 @@ namespace naa
   {
     SetName("WyWy");
     std::cout << "The value of the -U option is: " << opts->GetArgInt("user1") << std::endl;
+    model = new Model();
   }
 
   WyWy::~WyWy()
@@ -50,13 +51,16 @@ namespace naa
           char *south = std::strtok(NULL, ",");
           char *east  = std::strtok(NULL, ",");
           char *west  = std::strtok(NULL, ",");
-          std::cout << id << " "
-              << x << "," << y << "," << z << "  "
-              << north << " "
-              << south << " "
-              << east << " "
-              << west << " "
-              << std::endl;
+          Location loc;
+          loc.x = x;
+          loc.y = y;
+          loc.z = z;
+          Border border;
+          border.north = Model::InterfaceStringToInt(north);
+          border.south = Model::InterfaceStringToInt(south);
+          border.east = Model::InterfaceStringToInt(east);
+          border.west = Model::InterfaceStringToInt(west);
+          model->AddCell(id, loc, border);
           delete [] values;
         }
       else

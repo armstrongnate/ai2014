@@ -1,6 +1,7 @@
 #ifndef _NAAWYWY_H_
 #define _NAAWYWY_H_
 
+#include "naaModel.h"
 #include <ai_scavenger.h>
 
 namespace naa
@@ -11,6 +12,7 @@ namespace naa
     WyWy(ai::Agent::Options *opts);
     ~WyWy();
     virtual ai::Agent::Action * Program(const ai::Agent::Percept * percept);
+    Model *model;
   protected:
   private:
   };
