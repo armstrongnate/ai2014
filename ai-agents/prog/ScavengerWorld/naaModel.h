@@ -35,6 +35,10 @@ namespace naa {
       bool AddCell(int id, Location loc, Border border);
       Cell FindCell(double x, double y);
       static int InterfaceStringToInt(const char *s);
+      void SetLocation(Location loc);
+      void SetGoalLocation(Location loc);
+      Location GetLocation();
+      Location GetGoalLocation();
     protected:
     private:
       int DoubleToInt(const double d) const;

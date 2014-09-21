@@ -45,4 +45,20 @@ namespace naa {
     return true;
   }
 
+  void Model::SetLocation(Location loc) {
+    location = loc;
+  }
+
+  void Model::SetGoalLocation(Location loc) {
+    goalLocation = loc;
+  }
+
+  Location Model::GetLocation() {
+    return location;
+  }
+
+  Location Model::GetGoalLocation() {
+    return goalLocation;
+  }
+
 }
