@@ -590,6 +590,33 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/Manual.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchAction.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_search.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Action.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/State.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ActionStatePair.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Node.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Problem.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Frontier.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Fringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/BFFringe.h \
+ /usr/include/c++/4.8/queue /usr/include/c++/4.8/deque \
+ /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/c++/4.8/bits/deque.tcc \
+ /usr/include/c++/4.8/bits/stl_queue.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/UCFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DFFringe.h \
+ /usr/include/c++/4.8/stack /usr/include/c++/4.8/bits/stl_stack.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DLFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/GreedyFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/AStarFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Solution.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Algorithm.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Tree.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ClosedList.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Graph.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchState.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchProblem.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaModel.h
 00obj-o/AgentProgramSelect.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@

@@ -2,8 +2,11 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.cpp \
  /usr/include/stdc-predef.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaWyWy.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaModel.h \
- /usr/include/c++/4.8/utility \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchAction.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_search.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Action.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/State.h \
+ /usr/include/c++/4.8/string \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -11,37 +14,22 @@
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
- /usr/include/c++/4.8/bits/stl_relops.h \
- /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
- /usr/include/c++/4.8/bits/concept_check.h \
- /usr/include/c++/4.8/type_traits /usr/include/c++/4.8/initializer_list \
- /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
+ /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
+ /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/stl_algobase.h \
  /usr/include/c++/4.8/bits/functexcept.h \
  /usr/include/c++/4.8/bits/exception_defines.h \
  /usr/include/c++/4.8/bits/cpp_type_traits.h \
  /usr/include/c++/4.8/ext/type_traits.h \
  /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/type_traits \
  /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
  /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.8/debug/debug.h \
  /usr/include/c++/4.8/bits/stl_iterator.h \
- /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
- /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
- /usr/include/c++/4.8/exception \
- /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8/bits/exception_ptr.h \
- /usr/include/c++/4.8/bits/nested_exception.h \
- /usr/include/c++/4.8/bits/memoryfwd.h \
- /usr/include/c++/4.8/bits/stl_function.h \
- /usr/include/c++/4.8/backward/binders.h \
- /usr/include/c++/4.8/bits/alloc_traits.h \
- /usr/include/c++/4.8/bits/ptr_traits.h \
- /usr/include/c++/4.8/bits/stl_map.h /usr/include/c++/4.8/tuple \
- /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
- /usr/include/c++/4.8/string /usr/include/c++/4.8/bits/stringfwd.h \
- /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
  /usr/include/wchar.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
@@ -50,6 +38,13 @@
  /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/4.8/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/exception_ptr.h \
+ /usr/include/c++/4.8/bits/nested_exception.h \
  /usr/include/c++/4.8/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
  /usr/include/c++/4.8/clocale /usr/include/locale.h \
@@ -62,6 +57,8 @@
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
  /usr/include/c++/4.8/bits/ostream_insert.h \
  /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
  /usr/include/c++/4.8/bits/range_access.h \
  /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/ext/atomicity.h \
@@ -74,6 +71,7 @@
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
+ /usr/include/c++/4.8/initializer_list \
  /usr/include/c++/4.8/ext/string_conversions.h \
  /usr/include/c++/4.8/cstdlib /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
@@ -98,19 +96,52 @@
  /usr/include/c++/4.8/bits/functional_hash.h \
  /usr/include/c++/4.8/bits/hash_bytes.h \
  /usr/include/c++/4.8/bits/basic_string.tcc \
- /usr/include/c++/4.8/bits/uses_allocator.h \
- /usr/include/c++/4.8/bits/stl_multimap.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_scavenger.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ActionStatePair.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Node.h \
+ /usr/include/c++/4.8/list /usr/include/c++/4.8/bits/stl_list.h \
+ /usr/include/c++/4.8/bits/list.tcc \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Problem.h \
  /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/alloc_traits.h \
+ /usr/include/c++/4.8/bits/ptr_traits.h \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
- /usr/include/c++/4.8/bits/vector.tcc /usr/include/c++/4.8/thread \
- /usr/include/c++/4.8/chrono /usr/include/c++/4.8/ratio \
- /usr/include/c++/4.8/limits /usr/include/c++/4.8/ctime \
- /usr/include/c++/4.8/functional /usr/include/c++/4.8/typeinfo \
- /usr/include/c++/4.8/memory /usr/include/c++/4.8/bits/stl_tempbuf.h \
+ /usr/include/c++/4.8/bits/vector.tcc \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Frontier.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Fringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/BFFringe.h \
+ /usr/include/c++/4.8/queue /usr/include/c++/4.8/deque \
+ /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/bits/stl_heap.h \
+ /usr/include/c++/4.8/bits/stl_queue.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/UCFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DFFringe.h \
+ /usr/include/c++/4.8/stack /usr/include/c++/4.8/bits/stl_stack.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DLFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/GreedyFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/AStarFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Solution.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Algorithm.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Tree.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ClosedList.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Graph.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchState.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchProblem.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaModel.h \
+ /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
+ /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
+ /usr/include/c++/4.8/bits/stl_map.h /usr/include/c++/4.8/tuple \
+ /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
+ /usr/include/c++/4.8/bits/uses_allocator.h \
+ /usr/include/c++/4.8/bits/stl_multimap.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_scavenger.h \
+ /usr/include/c++/4.8/thread /usr/include/c++/4.8/chrono \
+ /usr/include/c++/4.8/ratio /usr/include/c++/4.8/limits \
+ /usr/include/c++/4.8/ctime /usr/include/c++/4.8/functional \
+ /usr/include/c++/4.8/typeinfo /usr/include/c++/4.8/memory \
+ /usr/include/c++/4.8/bits/stl_tempbuf.h \
  /usr/include/c++/4.8/bits/stl_raw_storage_iter.h \
  /usr/include/c++/4.8/ext/concurrence.h \
  /usr/include/c++/4.8/bits/unique_ptr.h \
@@ -439,8 +470,7 @@
  /usr/include/boost/array.hpp /usr/include/boost/swap.hpp \
  /usr/include/boost/utility/swap.hpp /usr/include/c++/4.8/algorithm \
  /usr/include/c++/4.8/bits/stl_algo.h \
- /usr/include/c++/4.8/bits/algorithmfwd.h \
- /usr/include/c++/4.8/bits/stl_heap.h /usr/include/c++/4.8/random \
+ /usr/include/c++/4.8/bits/algorithmfwd.h /usr/include/c++/4.8/random \
  /usr/include/c++/4.8/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -478,8 +508,7 @@
  /usr/include/boost/serialization/item_version_type.hpp \
  /usr/include/boost/archive/shared_ptr_helper.hpp \
  /usr/include/c++/4.8/set /usr/include/c++/4.8/bits/stl_set.h \
- /usr/include/c++/4.8/bits/stl_multiset.h /usr/include/c++/4.8/list \
- /usr/include/c++/4.8/bits/stl_list.h /usr/include/c++/4.8/bits/list.tcc \
+ /usr/include/c++/4.8/bits/stl_multiset.h \
  /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp \

@@ -41,6 +41,7 @@ namespace naa {
       void SetGoalLocation(Location loc);
       Location GetLocation();
       Location GetGoalLocation();
+      double GetCharge();
     protected:
     private:
       int DoubleToInt(const double d) const;

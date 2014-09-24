@@ -15,7 +15,7 @@ namespace naa {
   };
 
   bool Cell::IsValid() {
-    id > -1;
+    return id > -1;
   }
 
   Model::Model() {
@@ -73,6 +73,10 @@ namespace naa {
   Cell Model::GetGoalCell() {
     std::pair<int,int> key(DoubleToInt(goalLocation.x), DoubleToInt(goalLocation.y));
     return cells[key];
+  }
+
+  double Model::GetCharge() {
+    return charge;
   }
 
 }
