@@ -23,6 +23,7 @@ namespace naa {
     public:
       Cell();
       Cell(int id, Location loc, Border border);
+      bool IsValid();
       int id; // id is -1 for non-cells
       Location location;
       Border border;
@@ -34,6 +35,7 @@ namespace naa {
       ~Model();
       bool AddCell(int id, Location loc, Border border);
       Cell FindCell(double x, double y);
+      Cell GetGoalCell();
       static int InterfaceStringToInt(const char *s);
       void SetLocation(Location loc);
       void SetGoalLocation(Location loc);

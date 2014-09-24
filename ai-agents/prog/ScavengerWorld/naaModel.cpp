@@ -14,6 +14,10 @@ namespace naa {
     this->border = border;
   };
 
+  bool Cell::IsValid() {
+    id > -1;
+  }
+
   Model::Model() {
     Location loc;
     loc.x = 0.0;
@@ -59,6 +63,16 @@ namespace naa {
 
   Location Model::GetGoalLocation() {
     return goalLocation;
+  }
+
+  Cell Model::FindCell(double x, double y) {
+    std::pair<int,int> key(DoubleToInt(x), DoubleToInt(y));
+    return cells[key];
+  }
+
+  Cell Model::GetGoalCell() {
+    std::pair<int,int> key(DoubleToInt(goalLocation.x), DoubleToInt(goalLocation.y));
+    return cells[key];
   }
 
 }

@@ -21,7 +21,7 @@ our $aps =
    name => 'WyWy',
    key  => 'w',
    header => 'naaWyWy.h',
-   cpp    => ['naaWyWy.cpp', 'naaModel.cpp', 'naaState.cpp', 'naaSearchAction.cpp'],
+   cpp    => ['naaWyWy.cpp', 'naaModel.cpp', 'naaSearchState.cpp', 'naaSearchAction.cpp', 'naaSearchProblem.cpp'],
    constructor => 'naa::WyWy(opts)',
  },
 #{

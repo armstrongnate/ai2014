@@ -1,7 +1,7 @@
-00obj-o/naaState.o .depend-o.naaState.d :  \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaState.cpp \
+00obj-o/naaSearchProblem.o .depend-o.naaSearchProblem.d :  \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchProblem.cpp \
  /usr/include/stdc-predef.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaState.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchProblem.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_search.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Action.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/State.h \
@@ -126,6 +126,15 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Tree.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ClosedList.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Graph.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaModel.h \
+ /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
+ /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
+ /usr/include/c++/4.8/bits/stl_map.h /usr/include/c++/4.8/tuple \
+ /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
+ /usr/include/c++/4.8/bits/uses_allocator.h \
+ /usr/include/c++/4.8/bits/stl_multimap.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchState.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/ScavengerWorld/naaSearchAction.h \
  /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
  /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
@@ -140,16 +149,6 @@
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
- /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/cstring \
- /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
- /usr/include/c++/4.8/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/huge_val.h \
- /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
- /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
- /usr/include/x86_64-linux-gnu/bits/inf.h \
- /usr/include/x86_64-linux-gnu/bits/nan.h \
- /usr/include/x86_64-linux-gnu/bits/mathdef.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathinline.h
-00obj-o/naaState.o:
-	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaState.cpp -o $@
+ /usr/include/c++/4.8/bits/istream.tcc
+00obj-o/naaSearchProblem.o:
+	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaSearchProblem.cpp -o $@
