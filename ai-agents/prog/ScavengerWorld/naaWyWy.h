@@ -1,7 +1,11 @@
 #ifndef _NAAWYWY_H_
 #define _NAAWYWY_H_
 
+#include "naaSearchAction.h"
+#include "naaSearchState.h"
+#include "naaSearchProblem.h"
 #include <ai_scavenger.h>
+#include <list>
 
 namespace naa
 {
@@ -11,8 +15,12 @@ namespace naa
     WyWy(ai::Agent::Options *opts);
     ~WyWy();
     virtual ai::Agent::Action * Program(const ai::Agent::Percept * percept);
+    Model *model;
+    std::list<SearchAction> action_queue;
   protected:
   private:
+    bool ParcePercepts(const ai::Agent::Percept *percept);
+    void SearchForGoal();
   };
 }
 
