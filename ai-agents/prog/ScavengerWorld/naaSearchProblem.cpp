@@ -41,11 +41,11 @@ namespace naa {
             interface = cell.border.south;
             break;
           case ACTION_MOVE_EAST:
-            state->SetY(state->GetX() + 1000);
+            state->SetX(state->GetX() + 1000);
             interface = cell.border.east;
             break;
           case ACTION_MOVE_WEST:
-            state->SetY(state->GetX() - 1000);
+            state->SetX(state->GetX() - 1000);
             interface = cell.border.west;
             break;
         }
@@ -53,6 +53,7 @@ namespace naa {
         Cell c = model->FindCell(state->GetX(), state->GetY());
         if (c.IsValid() && (interface == I_PLAIN || interface == I_MUD)) {
           state->SetZ(c.location.z);
+          // TODO: set charge
           ai::Search::ActionStatePair asp(state, action);
           results_out.push_back(asp);
           safe = true;
