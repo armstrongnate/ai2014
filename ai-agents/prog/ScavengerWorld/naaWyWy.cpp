@@ -14,8 +14,48 @@ namespace naa {
    */
   WyWy::WyWy(ai::Agent::Options *opts) {
     SetName("WyWy");
-    std::cout << "The value of the -U option is: " << opts->GetArgInt("user1") << std::endl;
     model = new Model();
+    mode = MODE_GOAL;
+
+    bool error = false;
+
+    switch (opts->GetArgInt("user1")) {
+      case 1:
+        algorithm_type = ALG_TREE;
+        break;
+      case 2:
+        algorithm_type = ALG_GRAPH;
+        break;
+      default:
+        std::cerr << "" << std::endl;
+        error = true;
+        break;
+    }
+
+    switch (opts->GetArgInt("user2")) {
+      case 1:
+        frontier_type = FRONTIER_BFS;
+        break;
+      case 2:
+        frontier_type = FRONTIER_UCS;
+        break;
+      case 3:
+        frontier_type = FRONTIER_DFS;
+        break;
+      case 4:
+        frontier_type = FRONTIER_DLS;
+        break;
+      default:
+        std::cerr << "(-V) => BFS: 1; UCS: 2; DFS: 2; DLS: 4" << std::endl;
+        error = true;
+        break;
+    }
+
+    if (frontier_type == FRONTIER_DLS) {
+      dls_depth = opts->GetArgInt("user3");
+    }
+
+    if (error) { exit(1); }
   }
 
   WyWy::~WyWy() {}
@@ -24,27 +64,33 @@ namespace naa {
     ai::Scavenger::Action *action = new ai::Scavenger::Action;
     ParcePercepts(percept);
     if (action_queue.size() == 0) {
-      SearchForGoal();
-    }
-    if (action_queue.size() == 0) {
-      action->SetCode(ai::Scavenger::Action::QUIT);
-    } else {
-      SearchAction a = action_queue.front();
-      action_queue.pop_front();
-      switch (a.GetActionCode()) {
-        case ACTION_MOVE_NORTH:
-          action->SetCode(ai::Scavenger::Action::GO_NORTH);
-          break;
-        case ACTION_MOVE_SOUTH:
-          action->SetCode(ai::Scavenger::Action::GO_SOUTH);
-          break;
-        case ACTION_MOVE_EAST:
-          action->SetCode(ai::Scavenger::Action::GO_EAST);
-          break;
-        case ACTION_MOVE_WEST:
-          action->SetCode(ai::Scavenger::Action::GO_WEST);
-          break;
+      if (mode == MODE_GOAL) {
+        SearchForGoal();
+        mode = MODE_BASE;
       }
+      else if (mode == MODE_BASE) {
+        SearchForGoal();
+        mode = MODE_QUIT;
+      }
+      else if (mode == MODE_QUIT) {
+        action->SetCode(ai::Scavenger::Action::QUIT);
+      }
+    }
+    SearchAction a = action_queue.front();
+    action_queue.pop_front();
+    switch (a.GetActionCode()) {
+      case ACTION_MOVE_NORTH:
+        action->SetCode(ai::Scavenger::Action::GO_NORTH);
+        break;
+      case ACTION_MOVE_SOUTH:
+        action->SetCode(ai::Scavenger::Action::GO_SOUTH);
+        break;
+      case ACTION_MOVE_EAST:
+        action->SetCode(ai::Scavenger::Action::GO_EAST);
+        break;
+      case ACTION_MOVE_WEST:
+        action->SetCode(ai::Scavenger::Action::GO_WEST);
+        break;
     }
 
     return action;
@@ -79,8 +125,7 @@ namespace naa {
     first = false;
 
     /* cells */
-    static bool cellsFirst = true;
-    for (i = 0; i < percept->NumAtom() && cellsFirst; i++) {
+    for (i = 0; i < percept->NumAtom(); i++) {
       ai::Agent::PerceptAtom a = percept->GetAtom(i);
       if (std::strncmp(a.GetName().c_str(), "CELL_", 5) == 0) {
         int id;
@@ -114,7 +159,6 @@ namespace naa {
       } else {
         std::cout << a.GetName() << ": " << a.GetValue() << std::endl;
       }
-      first = false;
     }
 
     return true;
@@ -123,9 +167,33 @@ namespace naa {
   void WyWy::SearchForGoal() {
     Location loc = model->GetLocation();
     SearchState *the_initial_state = new SearchState(loc.x, loc.y, loc.z, model->GetCharge());
-    SearchProblem *the_problem = new SearchProblem(the_initial_state, model);
-    ai::Search::Fringe *the_frontier = new ai::Search::BFFringe();
-    ai::Search::Algorithm *the_algorithm = new ai::Search::Graph(the_problem, the_frontier);
+    SearchProblem *the_problem = new SearchProblem(the_initial_state, model, mode);
+    ai::Search::Fringe *the_frontier = 0;
+    ai::Search::Algorithm *the_algorithm = 0;
+
+    switch (frontier_type) {
+      case FRONTIER_BFS:
+        the_frontier = new ai::Search::BFFringe();
+        break;
+      case FRONTIER_UCS:
+        the_frontier = new ai::Search::UCFringe();
+        break;
+      case FRONTIER_DFS:
+        the_frontier = new ai::Search::DFFringe();
+        break;
+      case FRONTIER_DLS:
+        the_frontier = new ai::Search::DLFringe(dls_depth);
+        break;
+    }
+
+    switch (algorithm_type) {
+      case ALG_TREE:
+        the_algorithm = new ai::Search::Tree(the_problem, the_frontier);
+        break;
+      case ALG_GRAPH:
+        the_algorithm = new ai::Search::Graph(the_problem, the_frontier);
+        break;
+    }
 
     if (the_algorithm->Search()) {
       std::cout << "A path was found!" << std::endl;

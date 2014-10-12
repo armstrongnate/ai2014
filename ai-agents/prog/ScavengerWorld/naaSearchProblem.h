@@ -2,9 +2,15 @@
 #include "naaModel.h"
 
 namespace naa {
+  enum {
+    SEARCH_MODE_GOAL,
+    SEARCH_MODE_BASE,
+    SEARCH_MODE_QUIT,
+  };
+
   class SearchProblem : public ai::Search::Problem {
     public:
-      SearchProblem(ai::Search::State *initial_state_in, Model *model_in);
+      SearchProblem(ai::Search::State *initial_state_in, Model *model_in, int mode_in);
       virtual ~SearchProblem();
 
       virtual void Display() const;
@@ -16,6 +22,7 @@ namespace naa {
         const ai::Search::State  * const state2_in) const;
     protected:
       Model *model;
+      int mode;
     private:
   };
 }
