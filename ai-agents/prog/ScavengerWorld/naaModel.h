@@ -11,6 +11,14 @@ namespace naa {
     I_CLIFF,
   };
 
+  enum {
+    LOOK_DIRECTION_NORTH,
+    LOOK_DIRECTION_EAST,
+    LOOK_DIRECTION_SOUTH,
+    LOOK_DIRECTION_WEST,
+    LOOK_DIRECTION_MAX,
+  };
+
   struct Location {
     double x, y, z;
   };
@@ -24,6 +32,9 @@ namespace naa {
       Cell();
       Cell(int id, Location loc, Border border);
       bool IsValid();
+      bool Visited();
+      bool Touched();
+      void Display();
       int id; // id is -1 for non-cells
       Location location;
       Border border;
@@ -34,6 +45,7 @@ namespace naa {
       Model();
       ~Model();
       bool AddCell(int id, Location loc, Border border);
+      bool CellExists(double x, double y);
       Cell FindCell(double x, double y);
       Cell GetGoalCell();
       static int InterfaceStringToInt(const char *s);
@@ -42,6 +54,8 @@ namespace naa {
       Location GetLocation();
       Location GetGoalLocation();
       double GetCharge();
+      void SetCharge(double charge);
+      int GetCurrentInterface(int dir);
     protected:
     private:
       int DoubleToInt(const double d) const;

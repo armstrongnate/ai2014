@@ -3,6 +3,9 @@
 
 namespace naa {
   enum {
+    SEARCH_MODE_SCAVENGE,
+    SEARCH_MODE_LOOK,
+    SEARCH_MODE_LOOKED,
     SEARCH_MODE_GOAL,
     SEARCH_MODE_BASE,
     SEARCH_MODE_QUIT,
@@ -20,7 +23,7 @@ namespace naa {
       virtual double StepCost(const ai::Search::State  * const state1_in,
         const ai::Search::Action * const action_in,
         const ai::Search::State  * const state2_in) const;
-    protected:
+    private:
       Model *model;
       int mode;
     private:
