@@ -35,9 +35,13 @@ namespace naa {
     ai::Scavenger::Action *action = new ai::Scavenger::Action;
 
     if (mode == MODE_BASE && model->GetLocation().x == 0 && model->GetLocation().y == 0) {
-      action->SetCode(ai::Scavenger::Action::RECHARGE);
-      mode = MODE_SCAVENGE;
-      return action;
+      if (model->GetCharge() >= 100.0) {
+        mode = MODE_SCAVENGE;
+      }
+      else {
+        action->SetCode(ai::Scavenger::Action::RECHARGE);
+        return action;
+      }
     }
 
     if (mode == MODE_LOOK) {

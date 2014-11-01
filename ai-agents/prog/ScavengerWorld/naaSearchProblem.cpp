@@ -70,12 +70,17 @@ namespace naa {
           break;
       }
       state->SetZ(cell.location.z);
-      double min_charge = mode == SEARCH_MODE_SCAVENGE ? 80.0 : 1.0;
-      bool passable = interface == I_PLAIN || interface == I_MUD;
+      double stepCost = cell.Visited() ? 1.0 : cell.location.z * 0.001;
+      stepCost -= interface == I_MUD ? 1.0 : 0.0;
+      stepCost = abs(stepCost);
+      std::cout << "STEP COST IS: " << stepCost << std::endl;
+      state->SetCharge(state->GetCharge() - stepCost);
+      double min_charge = mode == SEARCH_MODE_BASE ? 0.5 : 1.0;
+      bool passable = state->GetCharge() - stepCost > min_charge && (interface == I_PLAIN || interface == I_MUD);
       if (mode == SEARCH_MODE_BASE) {
-        passable = model->FindCell(state->GetX(), state->GetY()).Visited();
+        passable = model->FindCell(state->GetX(), state->GetY()).Visited() && state->GetCharge() - stepCost > min_charge;
       }
-      if (state->GetCharge() > min_charge && passable) {
+      if (passable) {
         ai::Search::ActionStatePair asp(state, action);
         results_out.push_back(asp);
         safe = true;
