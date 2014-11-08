@@ -6,6 +6,7 @@
 #include "Dumbo2.h"
 #include "Smarty.h"
 #include "Pikachu.h"
+#include "naaMushu.h"
 
 namespace ai
 {
@@ -31,6 +32,9 @@ namespace ai
         case 'p':
           agent_program = new cgl::Pikachu();
           break;
+        case 'm':
+          agent_program = new naa::Mushu();
+          break;
 
         default:
           std::cout << "Unknown agent program " << std::endl
@@ -39,6 +43,7 @@ namespace ai
                     << "D : Dumbo2" << std::endl
                     << "s : Smarty" << std::endl
                     << "p : Pikachu" << std::endl
+                    << "m : Mushu" << std::endl
       
 		    << std::endl;
           exit(1);

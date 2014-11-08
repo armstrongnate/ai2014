@@ -14,7 +14,7 @@ namespace ai
 	  for(int pause1=0; pause1<500000; pause1++)
 	    {
 	      gGlobalCounter++;
-	      
+
 	      if(gGlobalCounter%2==3) // don't let the pause get optimized away
 		std::cout << "hi" << std::endl;
 	    }
