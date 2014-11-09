@@ -567,6 +567,7 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Dumbo2.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Smarty.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Pikachu.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaMushu.h
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaMushu.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaPremiumBoard.h
 00obj-o/AgentProgramSelect.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@

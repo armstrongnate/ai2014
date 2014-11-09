@@ -49,7 +49,7 @@ our $aps =
    name => 'Mushu',
    key  => 'm',
    header => 'naaMushu.h',
-   cpp    => ['naaMushu.cpp'],
+   cpp    => ['naaMushu.cpp', 'naaPremiumBoard.cpp'],
    constructor => 'naa::Mushu()',
  },
 #{

@@ -564,6 +564,7 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersAgent.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironment.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironmentDisplay.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironmentDriver.h
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironmentDriver.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaPremiumBoard.h
 00obj-o/naaMushu.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaMushu.cpp -o $@

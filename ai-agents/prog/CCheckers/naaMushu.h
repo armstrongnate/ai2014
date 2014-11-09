@@ -12,22 +12,9 @@
 #include <stdio.h>
 #include <ai_ccheckers.h>
 
-namespace naa {
+#include "naaPremiumBoard.h"
 
-  class NotSoBasicBoard : public ai::CCheckers::BasicBoard {
-  public:
-    NotSoBasicBoard() : ai::CCheckers::BasicBoard() {};
-    NotSoBasicBoard(const std::string &board_str_in) : ai::CCheckers::BasicBoard(board_str_in) {};
-    NotSoBasicBoard(const BasicBoard &board_in) : ai::CCheckers::BasicBoard(board_in) {};
-    bool Unmove(int player, const ai::CCheckers::MoveData &move_in) {
-      board.hole[move_in.to_x][move_in.to_y] = 0;
-      board.hole[move_in.from_x][move_in.from_y] = player;
-      board.player_turn = player;
-      number_of_turns--;
-      legal_moves_valid = false;
-      return true;
-    }
-  };
+namespace naa {
 
   class PlyData {
   public:
@@ -43,10 +30,10 @@ namespace naa {
     ~Mushu();
     virtual ai::Agent::Action *Program(const ai::Agent::Percept *percept);
   protected:
-    PlyData PickMove(const ai::CCheckers::BasicBoard &board, int player);
-    PlyData Max(const ai::CCheckers::BasicBoard &board, int player, int depth, int alpha, int beta);
-    PlyData Min(const ai::CCheckers::BasicBoard &board, int player, int depth, int alpha, int beta);
-    double Evaluate(const ai::CCheckers::BasicBoard &board, int player, int depth);
+    PlyData PickMove(PremiumBoard *board, int player);
+    PlyData Max(PremiumBoard *board, int player, int depth, double alpha, double beta);
+    PlyData Min(PremiumBoard *board, int player, int depth, double alpha, double beta);
+    double Evaluate(const PremiumBoard *board, int player, int depth);
   };
 
 }
