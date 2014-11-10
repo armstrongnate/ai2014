@@ -45,6 +45,13 @@ our $aps =
    cpp    => ['Pikachu.cpp'],
    constructor => 'cgl::Pikachu()',
  },
+ {
+   name => 'Mushu',
+   key  => 'm',
+   header => 'naaMushu.h',
+   cpp    => ['naaMushu.cpp', 'naaPremiumBoard.cpp'],
+   constructor => 'naa::Mushu()',
+ },
 #{
 #  name => '',
 #  key  => '',

@@ -1,24 +1,33 @@
-00obj-o/AgentProgramSelect.o .depend-o.AgentProgramSelect.d :  \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/AgentProgramSelect.cpp \
+00obj-o/naaMushu.o .depend-o.naaMushu.d :  \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaMushu.cpp \
  /usr/include/stdc-predef.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaMushu.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_ccheckers.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_agent.h \
  /usr/include/c++/4.8/iostream \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
- /usr/include/x86_64-linux-gnu/bits/wordsize.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
  /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
  /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/memoryfwd.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
- /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/xlocale.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/4.8/exception \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/bits/exception_ptr.h \
@@ -42,8 +51,7 @@
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
  /usr/include/c++/4.8/clocale /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/ctype.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
@@ -82,13 +90,9 @@
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/c++/4.8/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/4.8/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/4.8/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.8/bits/functional_hash.h \
  /usr/include/c++/4.8/bits/hash_bytes.h \
@@ -555,19 +559,12 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDisplay.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/AgentDriver.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDriver.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/RandomPick.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_ccheckers.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersBasicBoard.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersAction.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersAgent.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironment.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironmentDisplay.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/CCheckers/CCheckersEnvironmentDriver.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Dumbo1.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Dumbo2.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Smarty.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/Pikachu.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaMushu.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/CCheckers/naaPremiumBoard.h
-00obj-o/AgentProgramSelect.o:
-	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@
+00obj-o/naaMushu.o:
+	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaMushu.cpp -o $@
