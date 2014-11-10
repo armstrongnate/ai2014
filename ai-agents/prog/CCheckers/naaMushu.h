@@ -24,9 +24,14 @@ namespace naa {
     double utility;
   };
 
+  enum {
+    FORWARDNESS_UITILITY,
+    STRAGGLENESS_UTILITY
+  };
+
   class Mushu : public ai::Agent::AgentProgram {
   public:
-    Mushu();
+    Mushu(ai::Agent::Options *opts);
     ~Mushu();
     virtual ai::Agent::Action *Program(const ai::Agent::Percept *percept);
   protected:
@@ -34,6 +39,8 @@ namespace naa {
     PlyData Max(PremiumBoard *board, int player, int depth, double alpha, double beta);
     PlyData Min(PremiumBoard *board, int player, int depth, double alpha, double beta);
     double Evaluate(const PremiumBoard *board, int player, int depth);
+    int StragglerValue(const PremiumBoard *board, int player);
+    int utility;
   };
 
 }
