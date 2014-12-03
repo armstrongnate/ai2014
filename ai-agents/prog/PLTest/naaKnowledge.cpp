@@ -230,12 +230,12 @@ void test_problem2() {
   kb.TellNoStench(1, 0);
   kb.TellNoBreeze(1, 0);
   kb.TellNoStench(1, 0);
-  kb.AskPit(2, 0);
+  kb.AskPit(1, 0);
   assert(!kb.AskWumpus(2, 0));
   std::cout << "The End" << std::endl;
 }
 
-//int main(int argc, char **argv) {
-//  test_problem2();
-//  return 0;
-//}
+int main(int argc, char **argv) {
+  test_problem2();
+  return 0;
+}

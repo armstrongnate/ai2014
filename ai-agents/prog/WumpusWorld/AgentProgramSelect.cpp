@@ -3,6 +3,7 @@
 
 #include "Simpleton.h"
 #include "Aristotle.h"
+#include "naaHunter.h"
 
 namespace ai
 {
@@ -19,11 +20,15 @@ namespace ai
         case 'A':
           agent_program = new ai::Sample::Aristotle();
           break;
+        case 'h':
+          agent_program = new naa::Hunter();
+          break;
 
         default:
           std::cout << "Unknown agent program " << std::endl
                     << "S : Simpleton" << std::endl
                     << "A : Aristotle" << std::endl
+                    << "h : Hunter" << std::endl
       
 		    << std::endl;
           exit(1);

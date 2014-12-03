@@ -1,32 +1,34 @@
-00obj-o/AgentProgramSelect.o .depend-o.AgentProgramSelect.d :  \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/AgentProgramSelect.cpp \
+00obj-o/naaProblem.o .depend-o.naaProblem.d :  \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaProblem.cpp \
  /usr/include/stdc-predef.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_agent.h \
- /usr/include/c++/4.8/iostream \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaProblem.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
- /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
- /usr/include/c++/4.8/bits/memoryfwd.h \
- /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
- /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
- /usr/include/c++/4.8/exception \
- /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8/bits/exception_ptr.h \
- /usr/include/c++/4.8/bits/exception_defines.h \
- /usr/include/c++/4.8/bits/nested_exception.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_search.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Action.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/State.h \
+ /usr/include/c++/4.8/string \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h \
  /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/stl_algobase.h \
  /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
  /usr/include/c++/4.8/bits/cpp_type_traits.h \
  /usr/include/c++/4.8/ext/type_traits.h \
  /usr/include/c++/4.8/ext/numeric_traits.h \
@@ -36,18 +38,32 @@
  /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
  /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.8/debug/debug.h \
- /usr/include/c++/4.8/bits/stl_iterator.h /usr/include/c++/4.8/cstdint \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/xlocale.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/c++/4.8/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/bits/exception_ptr.h \
+ /usr/include/c++/4.8/bits/nested_exception.h \
  /usr/include/c++/4.8/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
  /usr/include/c++/4.8/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/cctype /usr/include/ctype.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/bits/ostream_insert.h \
+ /usr/include/c++/4.8/bits/cxxabi_forced.h \
+ /usr/include/c++/4.8/bits/stl_function.h \
+ /usr/include/c++/4.8/backward/binders.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
@@ -58,16 +74,6 @@
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
- /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
- /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
- /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
- /usr/include/c++/4.8/bits/ostream_insert.h \
- /usr/include/c++/4.8/bits/cxxabi_forced.h \
- /usr/include/c++/4.8/bits/stl_function.h \
- /usr/include/c++/4.8/backward/binders.h \
- /usr/include/c++/4.8/bits/range_access.h \
- /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/initializer_list \
  /usr/include/c++/4.8/ext/string_conversions.h \
  /usr/include/c++/4.8/cstdlib /usr/include/stdlib.h \
@@ -82,17 +88,51 @@
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/c++/4.8/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/4.8/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/4.8/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.8/bits/functional_hash.h \
  /usr/include/c++/4.8/bits/hash_bytes.h \
  /usr/include/c++/4.8/bits/basic_string.tcc \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ActionStatePair.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Node.h \
+ /usr/include/c++/4.8/list /usr/include/c++/4.8/bits/stl_list.h \
+ /usr/include/c++/4.8/bits/list.tcc \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Problem.h \
+ /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/alloc_traits.h \
+ /usr/include/c++/4.8/bits/ptr_traits.h \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/vector.tcc \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Frontier.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Fringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/BFFringe.h \
+ /usr/include/c++/4.8/queue /usr/include/c++/4.8/deque \
+ /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/bits/stl_heap.h \
+ /usr/include/c++/4.8/bits/stl_queue.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/UCFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DFFringe.h \
+ /usr/include/c++/4.8/stack /usr/include/c++/4.8/bits/stl_stack.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DLFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/GreedyFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/AStarFringe.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Solution.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Algorithm.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Tree.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ClosedList.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Graph.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaHunter.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_wumpus.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_xy.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_agent.h \
+ /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/bits/locale_classes.h \
  /usr/include/c++/4.8/bits/locale_classes.tcc \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
@@ -108,19 +148,11 @@
  /usr/include/c++/4.8/bits/sstream.tcc /usr/include/c++/4.8/cstring \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
- /usr/include/c++/4.8/bits/alloc_traits.h \
- /usr/include/c++/4.8/bits/ptr_traits.h \
  /usr/include/c++/4.8/bits/stl_map.h /usr/include/c++/4.8/tuple \
  /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
  /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
  /usr/include/c++/4.8/bits/uses_allocator.h \
- /usr/include/c++/4.8/bits/stl_multimap.h /usr/include/c++/4.8/vector \
- /usr/include/c++/4.8/bits/stl_construct.h \
- /usr/include/c++/4.8/ext/alloc_traits.h \
- /usr/include/c++/4.8/bits/stl_uninitialized.h \
- /usr/include/c++/4.8/bits/stl_vector.h \
- /usr/include/c++/4.8/bits/stl_bvector.h \
- /usr/include/c++/4.8/bits/vector.tcc \
+ /usr/include/c++/4.8/bits/stl_multimap.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_boost.h \
  /usr/include/boost/archive/text_iarchive.hpp \
  /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
@@ -432,8 +464,7 @@
  /usr/include/boost/array.hpp /usr/include/boost/swap.hpp \
  /usr/include/boost/utility/swap.hpp /usr/include/c++/4.8/algorithm \
  /usr/include/c++/4.8/bits/stl_algo.h \
- /usr/include/c++/4.8/bits/algorithmfwd.h \
- /usr/include/c++/4.8/bits/stl_heap.h /usr/include/c++/4.8/random \
+ /usr/include/c++/4.8/bits/algorithmfwd.h /usr/include/c++/4.8/random \
  /usr/include/c++/4.8/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -471,8 +502,7 @@
  /usr/include/boost/serialization/item_version_type.hpp \
  /usr/include/boost/archive/shared_ptr_helper.hpp \
  /usr/include/c++/4.8/set /usr/include/c++/4.8/bits/stl_set.h \
- /usr/include/c++/4.8/bits/stl_multiset.h /usr/include/c++/4.8/list \
- /usr/include/c++/4.8/bits/stl_list.h /usr/include/c++/4.8/bits/list.tcc \
+ /usr/include/c++/4.8/bits/stl_multiset.h \
  /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp \
@@ -555,9 +585,6 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDisplay.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/AgentDriver.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/EnvironmentDriver.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/Simpleton.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_wumpus.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_xy.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYAction.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYLocation.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Agent/XY/XYObject.h \
@@ -575,33 +602,8 @@
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/PL/Sentence.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/PL/KnowledgeBase.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai/include/PL/KnowledgeBaseFast.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/Aristotle.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaHunter.h \
  /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaKnowledge.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/ai_search.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Action.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/State.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ActionStatePair.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Node.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Problem.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Frontier.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Fringe.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/BFFringe.h \
- /usr/include/c++/4.8/queue /usr/include/c++/4.8/deque \
- /usr/include/c++/4.8/bits/stl_deque.h \
- /usr/include/c++/4.8/bits/deque.tcc \
- /usr/include/c++/4.8/bits/stl_queue.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/UCFringe.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DFFringe.h \
- /usr/include/c++/4.8/stack /usr/include/c++/4.8/bits/stl_stack.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/DLFringe.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/GreedyFringe.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/AStarFringe.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Solution.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Algorithm.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Tree.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/ClosedList.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai/include/Search/Graph.h \
- /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaState.h
-00obj-o/AgentProgramSelect.o:
-	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/AgentProgramSelect.cpp -o $@
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaState.h \
+ /home/nate/dev/ai/ai-release-y14m09d05/ai-agents/prog/WumpusWorld/naaAction.h
+00obj-o/naaProblem.o:
+	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/naaProblem.cpp -o $@
