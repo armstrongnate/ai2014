@@ -24,16 +24,27 @@ namespace naa {
     double utility;
   };
 
+  enum {
+    FORWARDNESS_UITILITY,
+    STRAGGLENESS_UTILITY
+  };
+
   class Mushu : public ai::Agent::AgentProgram {
   public:
-    Mushu();
+    Mushu(ai::Agent::Options *opts);
     ~Mushu();
     virtual ai::Agent::Action *Program(const ai::Agent::Percept *percept);
   protected:
     PlyData PickMove(PremiumBoard *board, int player);
     PlyData Max(PremiumBoard *board, int player, int depth, double alpha, double beta);
     PlyData Min(PremiumBoard *board, int player, int depth, double alpha, double beta);
+    PlyData BookMove(int move);
+    ai::CCheckers::MoveData GetMove(int from_x, int from_y, int to_x, int to_y);
     double Evaluate(const PremiumBoard *board, int player, int depth);
+    int StragglerValue(const PremiumBoard *board, int player);
+    int ConservativeValue(const PremiumBoard *board, int player);
+    int onMove;
+    int utility;
   };
 
 }

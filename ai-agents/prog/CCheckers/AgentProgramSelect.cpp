@@ -33,7 +33,7 @@ namespace ai
           agent_program = new cgl::Pikachu();
           break;
         case 'm':
-          agent_program = new naa::Mushu();
+          agent_program = new naa::Mushu(opts);
           break;
 
         default:
