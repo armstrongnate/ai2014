@@ -27,7 +27,7 @@ namespace naa {
         algorithm_type = ALG_GRAPH;
         break;
       default:
-        std::cerr << "" << std::endl;
+        std::cerr << "(-U) => Tree: 1; Graph: 2" << std::endl;
         error = true;
         break;
     }
@@ -46,7 +46,7 @@ namespace naa {
         frontier_type = FRONTIER_DLS;
         break;
       default:
-        std::cerr << "(-V) => BFS: 1; UCS: 2; DFS: 2; DLS: 4" << std::endl;
+        std::cerr << "(-V) => BFS: 1; UCS: 2; DFS: 3; DLS: 4" << std::endl;
         error = true;
         break;
     }
@@ -91,6 +91,8 @@ namespace naa {
       case ACTION_MOVE_WEST:
         action->SetCode(ai::Scavenger::Action::GO_WEST);
         break;
+    } else if (mode == MODE_QUIT) {
+      action->SetCode(ai::Scavenger::Action::QUIT);
     }
 
     return action;

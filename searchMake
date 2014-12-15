@@ -1,0 +1,17 @@
+seDir=$(dirname $0)
+
+BuildDir=./ai-agents/build/linux/prog/ScavengerWorld
+
+cd $BuildDir
+
+find -name '.depend*' -delete
+find -name '*.o' -delete
+find -name 'Makefile.agents' -delete
+
+# B_OPTIMIZE=0 B_DEBUG=1 make >& ../../../make.out
+# make >& ../../../make.out
+make
+
+cd ../../../../../
+
+echo make finished.
