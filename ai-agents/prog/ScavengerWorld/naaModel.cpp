@@ -4,8 +4,10 @@
 #include <cstring>
 
 namespace naa {
+
   Cell::Cell() {
-    this->id = -1;
+    id = -1;
+    border.north = border.east = border.south = border.west = I_UNKNOWN;
   }
 
   Cell::Cell(int id, Location loc, Border border) {
@@ -16,6 +18,33 @@ namespace naa {
 
   bool Cell::IsValid() {
     return id > -1;
+  }
+
+  bool Cell::Visited() {
+    return border.north != I_UNKNOWN &&
+    border.east != I_UNKNOWN &&
+    border.south != I_UNKNOWN &&
+    border.east != I_UNKNOWN;
+  }
+
+  bool Cell::Touched() {
+    return border.north != I_UNKNOWN ||
+    border.east != I_UNKNOWN ||
+    border.south != I_UNKNOWN ||
+    border.east != I_UNKNOWN;
+  }
+
+  void Cell::Display() {
+    std::cout << "CELL: "
+    << "id: " << id << ", "
+    << "border: " << border.north << ", "
+      << border.east << ", "
+      << border.south << ", "
+      << border.west << ", "
+    << "location: " << location.x << ", "
+      << location.y << ", "
+      << location.z
+    << std::endl;
   }
 
   Model::Model() {
@@ -29,10 +58,6 @@ namespace naa {
     this->hitPoints = 0.0;
   };
 
-  int Model::DoubleToInt(const double d) const {
-    return (int)(d + 1) / 1000;
-  }
-
   int Model::InterfaceStringToInt(const char *s) {
     if (std::strcmp(s, "plain") == 0) { return I_PLAIN; }
     else if (std::strcmp(s, "mud") == 0) { return I_MUD; }
@@ -43,7 +68,7 @@ namespace naa {
   }
 
   bool Model::AddCell(int id, Location loc, Border border) {
-    std::pair<int,int> key(DoubleToInt(loc.x), DoubleToInt(loc.y));
+    std::pair<int,int> key((int)loc.x, (int)loc.y);
     Cell c(id, loc, border);
     cells[key] = c;
     return true;
@@ -65,18 +90,52 @@ namespace naa {
     return goalLocation;
   }
 
+  bool Model::CellExists(double x, double y) {
+    std::pair<int,int> key((int)x, (int)y);
+    return !(cells.find(key) == cells.end());
+  }
+
   Cell Model::FindCell(double x, double y) {
-    std::pair<int,int> key(DoubleToInt(x), DoubleToInt(y));
-    return cells[key];
+    std::pair<int,int> key((int)x, (int)y);
+    Cell cell = cells[key];
+    cell.location.x = x;
+    cell.location.y = y;
+    return cell;
   }
 
   Cell Model::GetGoalCell() {
-    std::pair<int,int> key(DoubleToInt(goalLocation.x), DoubleToInt(goalLocation.y));
+    std::pair<int,int> key((int)goalLocation.x, (int)goalLocation.y);
     return cells[key];
   }
 
   double Model::GetCharge() {
     return charge;
+  }
+
+  void Model::SetCharge(double charge) {
+    this->charge = charge;
+  }
+
+  int Model::GetCurrentInterface(int dir) {
+    Cell cell = FindCell(location.x, location.y);
+    int interface = I_UNKNOWN;
+    if (!cell.IsValid()) { return interface; }
+    switch (dir) {
+      case LOOK_DIRECTION_NORTH:
+        interface = cell.border.north;
+        break;
+      case LOOK_DIRECTION_EAST:
+        interface = cell.border.east;
+      case LOOK_DIRECTION_SOUTH:
+        interface = cell.border.south;
+        break;
+      case LOOK_DIRECTION_WEST:
+        interface = cell.border.west;
+        break;
+      default:
+        break;
+    }
+    return interface;
   }
 
 }

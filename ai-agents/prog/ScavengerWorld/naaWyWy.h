@@ -21,10 +21,14 @@ namespace naa {
   };
 
   enum {
+    MODE_SCAVENGE,
+    MODE_LOOK,
+    MODE_LOOKED,
     MODE_GOAL,
     MODE_BASE,
     MODE_QUIT,
   };
+
 
   class WyWy : public ai::Agent::AgentProgram {
   public:
@@ -35,12 +39,19 @@ namespace naa {
     std::list<SearchAction> action_queue;
   protected:
   private:
-    bool ParcePercepts(const ai::Agent::Percept *percept);
-    void SearchForGoal();
+    bool ParsePercepts(const ai::Agent::Percept *percept);
+    ai::Scavenger::Location::Direction LookLocation();
+    void Look();
+    void LookAtCell(Location loc, int interface);
+    bool SearchForGoal();
+    void GetCurrentLocation(const ai::Agent::Percept *percept);
+    void ParseCell(ai::Agent::PerceptAtom a);
+    void AddNeighborCell(Cell cell);
     int frontier_type;
     int algorithm_type;
     int dls_depth;
     int mode;
+    int lookDirection;
   };
 }
 
