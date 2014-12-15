@@ -57,7 +57,7 @@ namespace naa {
         }
 
         Cell c = model->FindCell(state->GetX(), state->GetY());
-        if (c.IsValid() && (interface == I_PLAIN || interface == I_MUD)) {
+        if (c.IsValid() && (interface == I_PLAIN || interface == I_MUD || interface == I_ICE)) {
           state->SetZ(c.location.z);
           // TODO: set charge
           ai::Search::ActionStatePair asp(state, action);

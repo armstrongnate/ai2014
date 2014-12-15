@@ -2,7 +2,7 @@ DIR=./ai/bin/00bin-o
 
 ./searchMake >& make.out
 
-${DIR}/RunProg ${DIR}/ScavengerServer -f ./ai-agents/prog/ScavengerWorld/y12m09p04_world.txt -d 0 -O 1 -s 10000 -t 0 -S 30 >& server.out &
+${DIR}/RunProg ${DIR}/ScavengerServer -f ./ai-agents/prog/ScavengerWorld/00bin-o/y14m12d15-search-exam07-world.txt -d 0 -O 1 -s 10000 -t 0 -S 30 >& server.out &
 
 sleep 5
 

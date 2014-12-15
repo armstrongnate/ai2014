@@ -9,6 +9,7 @@ namespace naa {
     I_ROCKS,
     I_WALL,
     I_CLIFF,
+    I_ICE
   };
 
   struct Location {
