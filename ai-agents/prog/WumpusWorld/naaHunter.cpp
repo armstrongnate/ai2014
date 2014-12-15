@@ -38,18 +38,18 @@ namespace naa {
       ai::Agent::PerceptAtom a = percept->GetAtom(i);
 
       // gold
-      if (a.GetName() == "GOLD" && a.GetValue() == "1") {
-        std::cout << "FOUND GOLD!" << std::endl;
-        action->SetCode(ai::Agent::WumpusAction::QUIT);
-        return action;
-      }
+      // if (a.GetName() == "GOLD" && a.GetValue() == "1") {
+      //   std::cout << "FOUND GOLD!" << std::endl;
+      //   action->SetCode(ai::Agent::WumpusAction::QUIT);
+      //   return action;
+      // }
 
-      // glitter
-      if (a.GetName() == "GLITTER") {
-        std::cout << "GRABBING GOLD!" << std::endl;
-        action->SetCode(ai::Agent::WumpusAction::GRAB);
-        return action;
-      }
+      // // glitter
+      // if (a.GetName() == "GLITTER") {
+      //   std::cout << "GRABBING GOLD!" << std::endl;
+      //   action->SetCode(ai::Agent::WumpusAction::GRAB);
+      //   return action;
+      // }
 
       // breeze
       if (a.GetName() == "BREEZE") {
@@ -62,7 +62,6 @@ namespace naa {
 
       // stench
       if (a.GetName() == "STENCH") {
-        std::cout << "WHOO! STINKY!" << std::endl;
         kb.TellStench(state.x, state.y);
       }
       else {
@@ -87,7 +86,11 @@ namespace naa {
           state.x = solutionState->x;
           state.y = solutionState->y;
           state.direction = solutionState->direction;
-          std::cout << "x: " << state.x << " y: " << state.y << " direction: " << state.direction << std::endl;
+          if (kb.AskWumpus(state.x, state.y)) {
+            std::cout << "YELLING! <<<<<<<<<<<<<<<<<<<" << std::endl;
+            action->SetCode(ai::Agent::WumpusAction::YELL);
+            return action;
+          }
           solution->pop_front();
           return action;
         }

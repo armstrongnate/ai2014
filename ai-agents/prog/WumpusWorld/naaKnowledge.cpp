@@ -89,6 +89,13 @@ namespace naa {
     TellPercept(percept, condition, x, y);
   }
 
+  void MyKnowledgeBase::TellWarp(int x, int y) {
+    std::cout << "kb.TellWarp(" << x << ", " << y << ")" << std::endl;
+    std::string percept = "W";
+    std::string condition = "|";
+    TellPercept(percept, condition, x, y);
+  }
+
   void MyKnowledgeBase::TellNoBreeze(int x, int y) {
     std::cout << "kb.TellNoBreeze(" << x << ", " << y << ")" << std::endl;
     std::string percept = "!P";

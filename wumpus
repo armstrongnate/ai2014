@@ -2,8 +2,7 @@ DIR=./ai/bin/00bin-o
 
 ./wumpusMake >& make.out
 
-${DIR}/RunProg ${DIR}/WumpusWorld -d 0 -p 4321 -R 1000 -S 0 -t 0 -z 712441 >& server.out &
-# ${DIR}/RunProg ${DIR}/WumpusWorld -d 0 -p 4321 -R 10 -S 0 -t 0 >& server.out &
+${DIR}/RunProg ${DIR}/WumpusWorld -d 0 -p 4321 -R 10 -S 0 -t 1 -z 712441 >& server.out &
 sleep 5
 ${DIR}/RunProg ${DIR}/WumpusDisplay -p 4321 >& display.out &
 
