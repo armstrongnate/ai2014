@@ -58,7 +58,6 @@ namespace naa {
       int GetCurrentInterface(int dir);
     protected:
     private:
-      int DoubleToInt(const double d) const;
       std::map<std::pair<int,int>, Cell> cells;
       Location location;
       Location goalLocation;

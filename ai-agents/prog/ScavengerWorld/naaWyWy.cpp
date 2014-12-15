@@ -36,9 +36,11 @@ namespace naa {
 
     if (mode == MODE_BASE && model->GetLocation().x == 0 && model->GetLocation().y == 0) {
       if (model->GetCharge() >= 100.0) {
+        std::cout << "Fully charged, time to scavenge." << std::endl;
         mode = MODE_SCAVENGE;
       }
       else {
+        std::cout << "Charging!" << std::endl;
         action->SetCode(ai::Scavenger::Action::RECHARGE);
         return action;
       }
@@ -46,12 +48,14 @@ namespace naa {
 
     if (mode == MODE_LOOK) {
       if (model->GetCurrentInterface(lookDirection) == I_UNKNOWN) {
+        std::cout << "What's this? Let's see.." << std::endl;
         action->SetCode(ai::Scavenger::Action::LOOK);
         action->SetDirection(LookLocation());
         mode = MODE_LOOKED;
         return action;
       }
       else {
+        std::cout << "Seen it, what else do we got?" << std::endl;
         Look();
       }
     }
@@ -63,6 +67,7 @@ namespace naa {
       else {
         std::cout << "Path to unvisited cell NOT found!" << std::endl;
         if (model->GetLocation().x == 0 && model->GetLocation().y == 0) {
+          std::cout << "No path found at base, quitting." << std::endl;
           action->SetCode(ai::Scavenger::Action::QUIT);
           return action;
         }
@@ -77,6 +82,7 @@ namespace naa {
 		}
 
     if (action_queue.size() > 0) {
+      std::cout << "Be there in " << action_queue.size() << std::endl;
       SearchAction a = action_queue.front();
       action_queue.pop_front();
       switch (a.GetActionCode()) {
@@ -95,6 +101,7 @@ namespace naa {
       }
     }
     else {
+      std::cout << "Nowhere to go, must look." << std::endl;
       mode = MODE_LOOK;
     }
 
@@ -120,6 +127,7 @@ namespace naa {
     }
     cell.Display();
     model->AddCell(0, loc, border);
+    model->SetCharge(model->GetCharge() - 0.25);
   }
 
   void WyWy::AddNeighborCell(Cell cell) {

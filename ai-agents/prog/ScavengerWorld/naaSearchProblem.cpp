@@ -48,8 +48,8 @@ namespace naa {
     for (int i = ACTION_MOVE_NORTH; i < ACTION_MAX; i++) {
       SearchAction *action = new SearchAction(i);
       SearchState *state = new SearchState(s->GetX(), s->GetY(), s->GetZ(), s->GetCharge());
+      state->SetZ(cell.location.z);
       int interface = I_UNKNOWN;
-      bool safe = false;
 
       switch(i) {
         case ACTION_MOVE_NORTH:
@@ -69,35 +69,46 @@ namespace naa {
           interface = cell.border.west;
           break;
       }
-      state->SetZ(cell.location.z);
-      double stepCost = cell.Visited() ? 1.0 : cell.location.z * 0.001;
-      stepCost -= interface == I_MUD ? 1.0 : 0.0;
-      stepCost = abs(stepCost);
-      std::cout << "STEP COST IS: " << stepCost << std::endl;
-      state->SetCharge(state->GetCharge() - stepCost);
-      double min_charge = mode == SEARCH_MODE_BASE ? 0.5 : 1.0;
-      bool passable = state->GetCharge() - stepCost > min_charge && (interface == I_PLAIN || interface == I_MUD);
+      double stepCost = 1.0;
+      switch (interface) {
+        case I_MUD:
+          stepCost += 10;
+          break;
+        case I_ROCKS:
+        case I_PLAIN:
+          break;
+      }
+      double min_charge = 1.0;
+      bool passable = (state->GetCharge() - stepCost) > min_charge && (interface == I_PLAIN || interface == I_MUD);
       if (mode == SEARCH_MODE_BASE) {
-        passable = model->FindCell(state->GetX(), state->GetY()).Visited() && state->GetCharge() - stepCost > min_charge;
+        Cell nextCell = model->FindCell(state->GetX(), state->GetY());
+        state->SetZ(nextCell.location.z);
+        double dz = nextCell.location.z - cell.location.z;
+        stepCost += dz * 0.001;
+        state->SetCharge(state->GetCharge() - stepCost);
+        passable = nextCell.Visited() && (state->GetCharge() > min_charge);
+      }
+      else {
+        state->SetCharge(state->GetCharge() - stepCost - 1);
       }
       if (passable) {
         ai::Search::ActionStatePair asp(state, action);
         results_out.push_back(asp);
-        safe = true;
       }
-
-      if (!safe) {
+      else {
         delete state;
         delete action;
       }
     }
-    return results_out.size() > 0;
+    return true;
   }
 
   double SearchProblem::StepCost(const ai::Search::State  * const state1_in,
     const ai::Search::Action * const action_in,
     const ai::Search::State  * const state2_in) const {
-    return 1.0;
+    const SearchState * const state1 = dynamic_cast<const SearchState * const>(state1_in);
+    const SearchState * const state2 = dynamic_cast<const SearchState * const>(state2_in);
+    return state1->GetCharge() - state2->GetCharge();
   }
 
 }

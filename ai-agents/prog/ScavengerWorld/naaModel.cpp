@@ -58,10 +58,6 @@ namespace naa {
     this->hitPoints = 0.0;
   };
 
-  int Model::DoubleToInt(const double d) const {
-    return (int)(d + 1) / 1000;
-  }
-
   int Model::InterfaceStringToInt(const char *s) {
     if (std::strcmp(s, "plain") == 0) { return I_PLAIN; }
     else if (std::strcmp(s, "mud") == 0) { return I_MUD; }
@@ -72,7 +68,7 @@ namespace naa {
   }
 
   bool Model::AddCell(int id, Location loc, Border border) {
-    std::pair<int,int> key(DoubleToInt(loc.x), DoubleToInt(loc.y));
+    std::pair<int,int> key((int)loc.x, (int)loc.y);
     Cell c(id, loc, border);
     cells[key] = c;
     return true;
@@ -95,12 +91,12 @@ namespace naa {
   }
 
   bool Model::CellExists(double x, double y) {
-    std::pair<int,int> key(DoubleToInt(x), DoubleToInt(y));
+    std::pair<int,int> key((int)x, (int)y);
     return !(cells.find(key) == cells.end());
   }
 
   Cell Model::FindCell(double x, double y) {
-    std::pair<int,int> key(DoubleToInt(x), DoubleToInt(y));
+    std::pair<int,int> key((int)x, (int)y);
     Cell cell = cells[key];
     cell.location.x = x;
     cell.location.y = y;
@@ -108,7 +104,7 @@ namespace naa {
   }
 
   Cell Model::GetGoalCell() {
-    std::pair<int,int> key(DoubleToInt(goalLocation.x), DoubleToInt(goalLocation.y));
+    std::pair<int,int> key((int)goalLocation.x, (int)goalLocation.y);
     return cells[key];
   }
 
