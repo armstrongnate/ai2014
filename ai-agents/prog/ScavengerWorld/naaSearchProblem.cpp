@@ -5,9 +5,10 @@
 
 namespace naa {
 
-    SearchProblem::SearchProblem(ai::Search::State *initial_state_in, Model *model_in)
+    SearchProblem::SearchProblem(ai::Search::State *initial_state_in, Model *model_in, int mode_in)
       : ai::Search::Problem(initial_state_in),
-        model(model_in) {}
+        model(model_in),
+        mode(mode_in) {}
 
     SearchProblem::~SearchProblem() {}
 
@@ -16,9 +17,14 @@ namespace naa {
     }
 
     bool SearchProblem::GoalTest(const ai::Search::State * const state_in) const {
-      Location location = model->GetGoalLocation();
-      SearchState searchState(location.x, location.y, location.z, 0.0);
-      return searchState.IsEqual(state_in);
+      if (mode == SEARCH_MODE_BASE) {
+        SearchState searchState(0., 0., 0., 0.);
+        return searchState.IsEqual(state_in);
+      } else {
+        Location location = model->GetGoalLocation();
+        SearchState searchState(location.x, location.y, location.z, 0.0);
+        return searchState.IsEqual(state_in);
+      }
     }
 
     bool SearchProblem::FindSuccessors(const ai::Search::State * const state_in,
@@ -51,7 +57,7 @@ namespace naa {
         }
 
         Cell c = model->FindCell(state->GetX(), state->GetY());
-        if (c.IsValid() && (interface == I_PLAIN || interface == I_MUD)) {
+        if (c.IsValid() && (interface == I_PLAIN || interface == I_MUD || interface == I_ICE)) {
           state->SetZ(c.location.z);
           // TODO: set charge
           ai::Search::ActionStatePair asp(state, action);

@@ -7,10 +7,26 @@
 #include <ai_scavenger.h>
 #include <list>
 
-namespace naa
-{
-  class WyWy : public ai::Agent::AgentProgram
-  {
+namespace naa {
+  enum {
+    ALG_TREE,
+    ALG_GRAPH,
+  };
+
+  enum {
+    FRONTIER_BFS,
+    FRONTIER_UCS,
+    FRONTIER_DFS,
+    FRONTIER_DLS,
+  };
+
+  enum {
+    MODE_GOAL,
+    MODE_BASE,
+    MODE_QUIT,
+  };
+
+  class WyWy : public ai::Agent::AgentProgram {
   public:
     WyWy(ai::Agent::Options *opts);
     ~WyWy();
@@ -21,6 +37,10 @@ namespace naa
   private:
     bool ParcePercepts(const ai::Agent::Percept *percept);
     void SearchForGoal();
+    int frontier_type;
+    int algorithm_type;
+    int dls_depth;
+    int mode;
   };
 }
 
