@@ -1,0 +1,11 @@
+DIR=./ai/bin/00bin-o
+
+./ccheckersMake >& make.out
+
+${DIR}/RunProg ${DIR}/CCheckersServer -a 2 -d 0 -p 8945 -T 1 -t 0 >& server.out &
+sleep 5
+${DIR}/RunProg ${DIR}/CCheckersDisplay -p 8945 >& display.out &
+
+# ${DIR}/RunProg ${DIR}/CCheckersAgent -a m -p 8945 -t 0 >& agent1.out &
+${DIR}/RunProg ${DIR}/CCheckersAgent -a s -p 8945 -t 0 >& agent2.out &
+${DIR}/RunProg ${DIR}/CCheckersAgent -a m -p 8945 -t 0
