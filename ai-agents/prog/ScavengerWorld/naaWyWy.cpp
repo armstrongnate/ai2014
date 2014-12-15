@@ -74,6 +74,7 @@ namespace naa {
       }
       else if (mode == MODE_QUIT) {
         action->SetCode(ai::Scavenger::Action::QUIT);
+        return action;
       }
     }
     SearchAction a = action_queue.front();
@@ -91,8 +92,6 @@ namespace naa {
       case ACTION_MOVE_WEST:
         action->SetCode(ai::Scavenger::Action::GO_WEST);
         break;
-    } else if (mode == MODE_QUIT) {
-      action->SetCode(ai::Scavenger::Action::QUIT);
     }
 
     return action;

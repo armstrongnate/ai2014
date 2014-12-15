@@ -39,6 +39,7 @@ namespace naa {
     else if (std::strcmp(s, "rocks") == 0) { return I_ROCKS; }
     else if (std::strcmp(s, "cliff") == 0) { return I_CLIFF; }
     else if (std::strcmp(s, "wall") == 0) { return I_WALL; }
+    else if (std::strcmp(s, "ice") == 0) { return I_ICE; }
     else { return I_UNKNOWN; }
   }
 
